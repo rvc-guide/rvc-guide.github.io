@@ -19,7 +19,7 @@ These hands-on recommendations are not meant to be normative but should be used 
 * **Small and Focused PRs**: Contributors are strongly encouraged to create multiple small and focused PRs instead of single, monolithic monster PRs.
   As a general guideline, a PR should aim to touch as few files as possible.
   If, for example, you need to modify more than twenty files, this is a strong indication that you should split your PR into multiple ones, possibly based on each other.
-  There are, of course, exceptions to this rule of thumb, but these should be and justified in the PR comment.
+  There are, of course, exceptions to this rule of thumb, but these should be justified in the PR comment.
 * **Stay on target – avoid irrelevant code changes**: AI models sometimes get "distracted", modifying parts of the codebase that you didn't ask to change (like drive-by "improvements" that are not needed).
   Such changes can confuse reviewers and bloat your PR.
   Avoid touching code that is not relevant to the task at hand. Each PR should have a laser-focused diff - if you notice unrelated edits (no matter how well-intentioned by the AI), strip them out.
