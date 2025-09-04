@@ -13,12 +13,13 @@ Rather than rejecting AI involvement, we must become "AI realists" - leveraging 
 While many of the following practices - such as creating small, focused PRs and avoiding unrelated changes - have been best practices in collaborative software development for decades, AI-assisted coding amplifies the challenges they address. The speed and volume of AI-generated code can overwhelm reviewers, making adherence to these long-standing guidelines even more critical.
 
 The following guidelines aim to help contributors use AI responsibly in OS projects, thereby minimizing the review burden on maintainers while maintaining, if not raising, the usual quality bar.
+These hands-on recommendations are not meant to be normative but should be used as inspiration for your project specific needs.
 
 # Rules for AI-Assisted PR Submissions
 * **Small and Focused PRs**: Contributors are strongly encouraged to create multiple small and focused PRs instead of single, monolithic monster PRs.
   As a general guideline, a PR should aim to touch as few files as possible.
   If, for example, you need to modify more than twenty files, this is a strong indication that you should split your PR into multiple ones, possibly based on each other.
-  There are, of course, exceptions to this rule of thumb, but these should be justified in the PR comment.
+  There are, of course, exceptions to this rule of thumb, but these should be and justified in the PR comment.
 * **Stay on target – avoid irrelevant code changes**: AI models sometimes get "distracted", modifying parts of the codebase that you didn't ask to change (like drive-by "improvements" that are not needed).
   Such changes can confuse reviewers and bloat your PR.
   Avoid touching code that is not relevant to the task at hand. Each PR should have a laser-focused diff - if you notice unrelated edits (no matter how well-intentioned by the AI), strip them out.
@@ -31,16 +32,16 @@ The following guidelines aim to help contributors use AI responsibly in OS proje
 * **Challenge the LLM**: Often, the model will deliver an overly complex answer, so you should challenge it with additional questions about the change.
   If there is a more straightforward approach, weigh the pros and cons of each approach. Introduce checkpoints for states that you are happy with and make intermediate commits.
   Don't hesitate to rollback to the checkpoint if the LLM has driven itself into a corner and try again from there with a fresh context.
-* **Requests-In-Progress (RIP) Limit**: To prevent the "spamming" of _Pull Request_ (GitHub) or _Merge Requests_ (GitLab) and to maintain focus on the most important contributions, a Requests-In-Progress (RIP) limit is proposed. This limit means that only a fixed and negotiated number (e.g., 3) PRs might be open from a single author, which are currently under review (not counting DRAFT PRs).
+* **Requests-In-Progress (RIP) Limit**: To prevent the "spamming" of _Pull Requests_ (GitHub) or _Merge Requests_ (GitLab) and to maintain focus on the most important contributions, a Requests-In-Progress (RIP) limit is proposed. This limit means that only a fixed and negotiated number (e.g., 3) PRs might be open from a single author, which are currently under review (not counting DRAFT PRs).
   This metric is similar to the [Work-In-Progress (WIP) limit](https://www.atlassian.com/agile/kanban/wip-limits#:~:text=WIP%20limits%20improve%20throughput%20and,valuable%20tool%20in%20agile%20development) known from Kanban.
-  In agile terms, *WIP limits improve throughput by reducing the amount of work "nearly done" and forcing focus on a smaller set of tasks* This technique helps avoid "PR spam".
+  In agile terms, *WIP limits improve throughput by reducing the amount of work "nearly done" and forcing focus on a smaller set of tasks*. This technique helps avoid "PR spam".
   PR spam is not only noisy and annoying for the limited number of reviewers but also encourages contributors to *finish* and polish one change before moving on to the next.
   If your project does not enforce a RIP-Limit it's still a good practice to keep the number of your own open requests small.
 * **Add an AI Attribution**: Add an attribution to AI-generated content in your PR and commit comments. You can do it in free form or stick to some proposed conventions:
   In a commit message, or in a pull request/merge request description field, identify the code assistant that you used, perhaps elaborating on how it was used. You may wish to use a trailer like `Assisted-by:` for AI-assisted contributions or `Generated-by:` for fully AI-generated content.
   Alternatively, the [AI Attribution Toolkit](https://aiattribution.github.io/) has a proposal that results in detailed attribution lines like [AIA PAI Nc Hin R o3 v1.0](https://aiattribution.github.io/statements/AIA-PAI-Nc-Hin-R-?model=o3-v10).
   The syntax of the AI Attribution Toolkit is not an established standard and might be too complex and too detailed for many open source communities.
-* **Assume AI assistxoance and openly share prompting techniques**: These days, it's safe to assume AI assistance is the norm rather than the exception.
+* **Assume AI assistance and openly share prompting techniques**: These days, it's safe to assume AI assistance is the norm rather than the exception.
   Contributors and reviewers are encouraged to share and discuss their prompting techniques openly.
   Be aware that most of the code you encounter was also generated by AI and may contain elusive bugs.
 
