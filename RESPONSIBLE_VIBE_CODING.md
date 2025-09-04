@@ -17,9 +17,10 @@ These hands-on recommendations are not meant to be normative but should be used 
 
 # Rules for AI-Assisted PR Submissions
 * **Small and Focused PRs**: Contributors are strongly encouraged to create multiple small and focused PRs instead of single, monolithic monster PRs.
-  As a general guideline, a PR should aim to touch as few files as possible.
-  If, for example, you need to modify more than twenty files, this is a strong indication that you should split your PR into multiple ones, possibly based on each other.
-  There are, of course, exceptions to this rule of thumb, but these should be justified in the PR comment.
+  What matters most is maintaining a single, clear intent throughout the PR.
+  Whether your change touches one file or fifty, the core purpose and scope should remain consistent and focused.
+  If you find yourself modifying files that don't directly serve the primary goal of your PR, this is a strong indication that you should split your work into multiple PRs.
+  The number of files modified is less important than ensuring each file change contributes to the same coherent objective.
 * **Stay on target – avoid irrelevant code changes**: AI models sometimes get "distracted", modifying parts of the codebase that you didn't ask to change (like drive-by "improvements" that are not needed).
   Such changes can confuse reviewers and bloat your PR.
   Avoid touching code that is not relevant to the task at hand. Each PR should have a laser-focused diff - if you notice unrelated edits (no matter how well-intentioned by the AI), strip them out.
@@ -29,6 +30,11 @@ These hands-on recommendations are not meant to be normative but should be used 
   Try to run the code end-to-end, and run all relevant unit tests or sample scenarios.
   If the project has automated test suites or linters, run those tools locally to catch obvious issues.
   _You are responsible for the code you submit, whether you or an AI wrote it, and AI tools are no substitute for your own review of code quality, correctness, style, security, and licensing_ (from [OpenInfra AI policy](https://openinfra.org/legal/ai-policy/#:~:text=As%20a%20contributor%2C%20you%20are,correctness%2C%20style%2C%20security%2C%20and%20licensing)).
+  Submitting AI-generated code without proper review can have serious repercussions.
+  Maintainers may lose trust in your contributions, leading to more scrutiny of future PRs or even being "ghosted" (having your PRs ignored).
+  In extreme cases, repeated low-quality submissions can result in being banned from the project or having your contributions blocked.
+  Beyond the technical consequences, submitting obviously flawed code can damage your professional reputation within the open-source community, making you appear unprofessional or careless.
+  The time you save by skipping self-review will likely be lost many times over in the form of back-and-forth discussions, rework, and damaged relationships with maintainers.
 * **Challenge the LLM**: Often, the model will deliver an overly complex answer, so you should challenge it with additional questions about the change.
   If there is a more straightforward approach, weigh the pros and cons of each approach. Introduce checkpoints for states that you are happy with and make intermediate commits.
   Don't hesitate to rollback to the checkpoint if the LLM has driven itself into a corner and try again from there with a fresh context.
